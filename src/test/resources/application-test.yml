@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:auditing;DB_CLOSE_ON_EXIT=FALSE
+  jpa:
+    show_sql: true
+    properties:
+      hibernate.cache.use_second_level_cache: false
+      hibernate.cache.use_query_cache: false
+      hibernate.format_sql: true
+
+eureka:
+  client:
+    enabled: false
+
+ribbon:
+  eureka:
+    enabled: false
+
+logging:
+  level:
+    ROOT: INFO
+    org.hibernate.SQL: INFO
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
