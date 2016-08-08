@@ -27,7 +27,8 @@ public class AuditedEntityIntegrationTest extends IntegrationTestBase {
 
         // when
         predefinedIdRepository.save(entity);
-        entityManager.flush();
+        entityManager.flush();  // throws object references an unsaved transient instance - save the transient
+                                // instance before flushing: me.auditing.dao.AuditorDetails
 
         // then
         assertNotNull(entity.getCreatedBy().getId());
